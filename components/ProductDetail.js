@@ -11,9 +11,10 @@ import {
 import cartStore from "../stores/cartStore";
 import productStore from "../stores/productStore";
 
-export function ProductDetails({ route }) {
+export function ProductDetails({ route, navigation }) {
   const { id } = route.params;
   const product = productStore.getProductById(id);
+  navigation.setOptions({ title: product.name });
   return (
     <SafeAreaView>
       <ScrollView>

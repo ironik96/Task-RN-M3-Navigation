@@ -7,11 +7,17 @@ const { Navigator, Screen } = createNativeStackNavigator();
 
 export default function RootNavigator() {
   return (
-    <Navigator initialRouteName="Home">
+    <Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerStyle: { backgroundColor: "hsl(207, 90%, 64%)" },
+        headerTintColor: "white",
+      }}
+    >
       <Screen
         name="Home"
         component={ProductsList}
-        options={{ title: "Welcome" }}
+        options={{ title: "Products" }}
       />
       <Screen
         name="Product Detail"
